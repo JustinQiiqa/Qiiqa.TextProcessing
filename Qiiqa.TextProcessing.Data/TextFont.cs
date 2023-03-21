@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace Qiiqa.TextProcessing.Data;
+﻿namespace Qiiqa.TextProcessing.Data;
 
 public sealed class TextFont
 {
@@ -10,20 +8,9 @@ public sealed class TextFont
 
     public List<TextSymbol> Symbols { get; set; } = new();
 
-    public TextSymbol? this[string text]
-    {
-        get
-        {
-            return Symbols.Find(s => s.Text == text);
-        }
-    }
+    public TextSymbol? this[string text] => Symbols.Find(s => s.Text == text);
 
     public TextFont() { }
-
-    public TextFont(IEnumerable<TextSymbol> symbols)
-    {
-        Symbols.AddRange(symbols);
-    }
 
     public TextFont(string fontName, float fontSize, IEnumerable<TextSymbol> symbols) : this(symbols)
     {
