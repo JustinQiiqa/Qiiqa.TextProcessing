@@ -9,7 +9,6 @@ public class UnitTest1
     [TestMethod]
     public void TestTextWordRecalculate()
     {
-        // Arrange
         var symbols = new List<TextSymbol>
         {
             new TextSymbol { Text = "A", Rect = new RectangleF(10, 13, 8, 10), Color = Color.Orange },
@@ -20,10 +19,8 @@ public class UnitTest1
 
         var word = new TextWord();
 
-        // Act
         word.AddSymbols(symbols);
 
-        // Assert
         Assert.AreEqual(new RectangleF(10, 11, 66, 12), word.Rect);
 
         var avgColor = Color.FromArgb(255, 191, 123, 63);
@@ -34,7 +31,6 @@ public class UnitTest1
     [TestMethod]
     public void TestTextLineRecalculate()
     {
-        // Arrange
         var words = new List<TextWord>
         {
             new TextWord(new List<TextSymbol>
@@ -53,15 +49,62 @@ public class UnitTest1
 
         var line = new TextLine();
 
-        // Act
         line.Words.AddRange(words);
         line.Recalculate();
 
-        // Assert
         Assert.AreEqual(new RectangleF(10, 11, 84, 14), line.Rect);
-        Assert.AreEqual(Color.Orange, line.Color);
+
+        var avgColor = Color.FromArgb(255, 127, 82, 127);
+        Assert.AreEqual(avgColor.ToArgb(), line.Color?.ToArgb());
     }
 
+    [TestMethod]
+    public void TestTextBlockRecalculate()
+    {
+        var lines = new List<TextLine>
+        {
+            new TextLine(new List<TextWord>
+            {
+                new TextWord(new List<TextSymbol>
+                {
+                    new TextSymbol { Text = "A", Rect = new RectangleF(10, 13, 8, 10), Color = Color.Orange },
+                    new TextSymbol { Text = "B", Rect = new RectangleF(22, 12, 9, 10), Color = Color.Orange },
+                    new TextSymbol { Text = "C", Rect = new RectangleF(44, 11, 10, 10), Color = Color.Orange }
+                }),
+                new TextWord(new List<TextSymbol>
+                {
+                    new TextSymbol { Text = "D", Rect = new RectangleF(60, 15, 7, 10), Color = Color.Blue },
+                    new TextSymbol { Text = "E", Rect = new RectangleF(70, 14, 8, 10), Color = Color.Blue },
+                    new TextSymbol { Text = "F", Rect = new RectangleF(84, 13, 10, 10), Color = Color.Blue }
+                })
+            }),
+            new TextLine(new List<TextWord>
+            {
+                new TextWord(new List<TextSymbol>
+                {
+                    new TextSymbol { Text = "G", Rect = new RectangleF(100, 17, 8, 10), Color = Color.Green },
+                    new TextSymbol { Text = "H", Rect = new RectangleF(110, 16, 9, 10), Color = Color.Green },
+                    new TextSymbol { Text = "I", Rect = new RectangleF(124, 15, 10, 10), Color = Color.Green }
+                }),
+                new TextWord(new List<TextSymbol>
+                {
+                    new TextSymbol { Text = "J", Rect = new RectangleF(140, 19, 7, 10), Color = Color.Red },
+                    new TextSymbol { Text = "K", Rect = new RectangleF(150, 18, 8, 10), Color = Color.Red },
+                    new TextSymbol { Text = "L", Rect = new RectangleF(164, 17, 10, 10), Color = Color.Red }
+                })
+            })
+        };
+
+        var block = new TextBlock();
+
+        block.Lines.AddRange(lines);
+        block.Recalculate();
+
+        Assert.AreEqual(new RectangleF(10, 11, 164, 18), block.Rect);
+
+        var avgColor = Color.FromArgb(255, 127, 73, 63);
+        Assert.AreEqual(avgColor.ToArgb(), block.Color?.ToArgb());
+    }
 
     [TestMethod]
     public void CreateTextEntities_CheckProperties()
