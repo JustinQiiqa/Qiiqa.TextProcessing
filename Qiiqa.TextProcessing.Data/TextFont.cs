@@ -10,6 +10,7 @@ public sealed record TextFont
 
     public List<TextSymbol> Symbols { get; set; } = new();
     public Color? Color { get; set; }
+    public float? BaseLine { get; set; }
 
     public TextSymbol? this[string? text] => Symbols.Find(s => s.Text == text);
 }

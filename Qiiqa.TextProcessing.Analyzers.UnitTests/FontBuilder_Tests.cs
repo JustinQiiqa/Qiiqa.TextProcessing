@@ -9,7 +9,7 @@ namespace Qiiqa.TextProcessing.Analyzers.UnitTests;
 [TestClass]
 public class FontBuilder_UnitTests
 {
-    private readonly FontBuilder _fontBuilder = new FontBuilder
+    private readonly FontAnalyzer _fontBuilder = new FontAnalyzer
     {
         AllowedPercentageDifferenceSize = 10,
         AllowedPercentageDifferenceColor = 5

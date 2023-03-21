@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Qiiqa.TextProcessing.Analyzers;
 
-public class FontBuilder
+public class FontAnalyzer
 {
     public float AllowedPercentageDifferenceSize { get; set; }
     public float AllowedPercentageDifferenceColor { get; set; }
@@ -87,16 +87,16 @@ public class FontBuilder
 
     private bool IsKnownColorWithinPercentageDifference(Color color1, Color color2)
     {
-        double r = Math.Abs(color1.R - color2.R) / 255f;
+        float r = Math.Abs(color1.R - color2.R) / 255f;
         if (r > AllowedPercentageDifferenceColor) return false;
 
-        double g = Math.Abs(color1.G - color2.G) / 255f;
+        float g = Math.Abs(color1.G - color2.G) / 255f;
         if (g > AllowedPercentageDifferenceColor) return false;
 
-        double b = Math.Abs(color1.B - color2.B) / 255f;
+        float b = Math.Abs(color1.B - color2.B) / 255f;
         if (b > AllowedPercentageDifferenceColor) return false;
 
-        double a = Math.Abs(color1.A - color2.A) / 255f;
+        float a = Math.Abs(color1.A - color2.A) / 255f;
         return a <= AllowedPercentageDifferenceColor;
     }
 }
