@@ -1,5 +1,7 @@
 ﻿namespace Qiiqa.TextProcessing.Data;
 
-public sealed class TextSymbol : TextBase
+public sealed record TextSymbol : TextBase
 {
+
+
 }

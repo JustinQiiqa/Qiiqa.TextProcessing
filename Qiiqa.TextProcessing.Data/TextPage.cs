@@ -1,6 +1,6 @@
 ﻿namespace Qiiqa.TextProcessing.Data;
 
-public sealed class TextPage
+public sealed record TextPage
 {
     public List<TextBlock> Blocks { get; set; } = new();
 }

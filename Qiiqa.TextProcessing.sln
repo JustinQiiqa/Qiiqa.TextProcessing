@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qiiqa.TextProcessing.Data",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qiiqa.TextProcessing.Data.UnitTests", "Qiiqa.TextProcessing.Data.UnitTests\Qiiqa.TextProcessing.Data.UnitTests.csproj", "{D499A4EC-F0F8-4FF0-A045-EF42EB01FCA5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qiiqa.TextProcessing.Analyzers.UnitTests", "Qiiqa.TextProcessing.Analyzers.UnitTests\Qiiqa.TextProcessing.Analyzers.UnitTests.csproj", "{D1C7ADAB-DE20-487F-967F-CF0D4D3D22B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qiiqa.TextProcessing.Analyzers", "Qiiqa.TextProcessing.Analyzers\Qiiqa.TextProcessing.Analyzers.csproj", "{4090418A-7425-44F5-A2E5-1E5C0BA53944}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{D499A4EC-F0F8-4FF0-A045-EF42EB01FCA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D499A4EC-F0F8-4FF0-A045-EF42EB01FCA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D499A4EC-F0F8-4FF0-A045-EF42EB01FCA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1C7ADAB-DE20-487F-967F-CF0D4D3D22B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1C7ADAB-DE20-487F-967F-CF0D4D3D22B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1C7ADAB-DE20-487F-967F-CF0D4D3D22B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1C7ADAB-DE20-487F-967F-CF0D4D3D22B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4090418A-7425-44F5-A2E5-1E5C0BA53944}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4090418A-7425-44F5-A2E5-1E5C0BA53944}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4090418A-7425-44F5-A2E5-1E5C0BA53944}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4090418A-7425-44F5-A2E5-1E5C0BA53944}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

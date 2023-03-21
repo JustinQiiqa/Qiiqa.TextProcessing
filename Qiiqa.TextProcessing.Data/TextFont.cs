@@ -1,20 +1,16 @@
-﻿namespace Qiiqa.TextProcessing.Data;
+﻿using System.Drawing;
 
-public sealed class TextFont
+namespace Qiiqa.TextProcessing.Data;
+
+public sealed record TextFont
 {
     public string? FontName { get; set; }
 
     public float? FontSize { get; set; }
 
     public List<TextSymbol> Symbols { get; set; } = new();
+    public Color? Color { get; set; }
 
-    public TextSymbol? this[string text] => Symbols.Find(s => s.Text == text);
-
-    public TextFont() { }
-
-    public TextFont(string fontName, float fontSize, IEnumerable<TextSymbol> symbols) : this(symbols)
-    {
-        FontName = fontName;
-        FontSize = fontSize;
-    }
+    public TextSymbol? this[string? text] => Symbols.Find(s => s.Text == text);
 }
+
